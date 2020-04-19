@@ -23,7 +23,7 @@
 
 <div class="wrap com-panel clearfix">
     <div class="">
-        <%=new FocusgraphicBuilder(request).buildFullScreen()%>
+        <%--<%=new FocusgraphicBuilder(request).buildFullScreen()%>--%>
     </div>
 </div>
 
@@ -34,7 +34,7 @@
 <div class="wrap round-block ">
 
 
-    <%=new IndexcolumnsBuilder(request).buildColumns() %>
+    <%--<%=new IndexcolumnsBuilder(request).buildColumns() %>--%>
 
 
 
