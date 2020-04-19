@@ -3,11 +3,14 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>springmvc</display-name>
+  <display-name>novel</display-name>
 
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:spring/applicationContext-*.xml</param-value>
+    <param-value>
+      classpath:spring/applicationContext-aop.xml,
+      classpath:spring/applicationContext-db.xml
+    </param-value>
   </context-param>
 
   <filter>
@@ -26,24 +29,26 @@
     <filter-name>encodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-  <!-- Servlet Context Listener -->
+
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
 
-  <!-- 加载springmvc -->
   <servlet>
-    <servlet-name>springmvc</servlet-name>
+    <servlet-name>dispatcherServlet</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:springmvc.xml</param-value>
+      <param-value>classpath:spring/applicationContext-mvc.xml</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-    <servlet-name>springmvc</servlet-name>
+    <servlet-name>dispatcherServlet</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
 </web-app>
