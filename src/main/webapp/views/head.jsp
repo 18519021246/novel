@@ -1,8 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
-<%@ include file="import.jsp" %>
+<%--<%@ include file="import.jsp" %>--%>
  <script type="text/javascript">
   
     $(function(){
@@ -79,16 +77,15 @@
 						<span data-usertype="1" class="exit">退出</span>
 					</c:if>
 				</div>
-				<a href="#">帮助中心</a>
+				<%--<a href="#">帮助中心</a>--%>
 			</div>
-			<div class="pull-right">
-			   <c:if test="${sessionScope.huiyuan==null }">
-				<a href="${path}/e/login.jsp"><span class="cr">登录</span></a>
+	  <div class="pull-right">
+		  		<a href="login"><span class="cr">登录</span></a>
+		  		<c:if test="${sessionScope.huiyuan==null }">
 			   </c:if>
-				<a href="${path}/e/register.jsp">注册</a>
-				
-			   
-				<a href="${pageContext.request.contextPath}/admin/login.jsp">系统后台</a>
+				<a href="register">注册</a>
+
+				<a href="loginback">系统后台</a>
 			</div>
 		</div>
 
@@ -109,7 +106,7 @@
 
 				</div>
 				<div class="keyword">
-					<input type="text" placeholder="请输入小说名" id="title" value="${title }" name="title">
+					<input type="text" placeholder="请输入小说名" id="title" name="title">
 				</div>
 				<div class="so">
 					<input type="submit" class="sobtn" id="btnSearch" value="搜索" name="btnSearch">

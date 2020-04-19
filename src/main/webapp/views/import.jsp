@@ -7,7 +7,7 @@
     pageContext.getRequest().setAttribute("path",path);
 %>
 
-<script src="${path}/static/js/jquery-1.12.4.min.js" type="text/javascript"></script>
+<%--<script src="${path}/js/jquery-1.12.4.min.js" type="text/javascript"></script>--%>
 <script type="text/javascript">
     var path = "${path}";
 </script>

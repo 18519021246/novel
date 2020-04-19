@@ -1,15 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="common/import.jsp" %>
+<%--<%@ include file="import.jsp" %>--%>
 <!DOCTYPE HTML>
 
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>系统首页</title>
-    <link rel="stylesheet" href="${path}/static/css/index.css" type="text/css"></link>
-    <%--<link href="${path}/e/css/box.all.css"  rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="${path}/e/css/carousel.css" />
-    <script type='text/javascript' src='${path}/e/js/carousel.js'></script>--%>
+    <title>首页</title>
+
+    <link rel="stylesheet" href="css/index.css" type="text/css"></link>
+    <link rel="stylesheet" href="css/box.all.css" type="text/css"></link>
+    <link rel="stylesheet" href="css/carousel.css" type="text/css"/>
+
+    <%--<script  type="text/javascript" src="js/jquery-1.12.4.min.js"></script>--%>
+
+    <script type='text/javascript' src='js/carousel.js'></script>
 
     <script type="text/javascript">
         $(function () {
@@ -19,7 +23,7 @@
 </head>
 <body>
 
-<jsp:include page="common/head.jsp"></jsp:include>
+<jsp:include page="head.jsp"></jsp:include>
 
 <div class="wrap com-panel clearfix">
     <div class="">
@@ -40,6 +44,6 @@
 
 </div>
 <div class="fn-clear"></div>
-    <jsp:include page="common/bottom.jsp"></jsp:include>
+    <jsp:include page="bottom.jsp"></jsp:include>
 </body>
 </html>

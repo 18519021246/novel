@@ -6,28 +6,11 @@
 
     <context:property-placeholder location="classpath:jdbc.properties" />
 
-    <bean id="admin" class="org.apache.commons.dbcp2.BasicDataSource">
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
         <property name="driverClassName" value="${jdbc.driver}" />
         <property name="url" value="${jdbc.url}" />
         <property name="username" value="${jdbc.username}" />
         <property name="password" value="${jdbc.password}" />
-    </bean>
-
-    <bean id="portal" class="org.apache.commons.dbcp2.BasicDataSource">
-        <property name="driverClassName" value="${jdbc.driver}" />
-        <property name="url" value="${portal.jdbc.url}" />
-        <property name="username" value="${portal.jdbc.username}" />
-        <property name="password" value="${portal.jdbc.password}" />
-    </bean>
-
-    <bean id="dataSource" class="com.zrobot.dataSource.MultiDataSource">
-        <property name="targetDataSources">
-            <map key-type="java.lang.String">
-                <entry value-ref="admin" key="ADMIN"></entry>
-                <entry value-ref="portal" key="PORTAL"></entry>
-            </map>
-        </property>
-        <property name="defaultTargetDataSource" ref="portal" />
     </bean>
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -36,7 +19,7 @@
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.zrobot.dao" />
+        <property name="basePackage" value="com.imnu.mapper" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 </beans>

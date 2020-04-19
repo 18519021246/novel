@@ -1,7 +1,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="import.jsp"%>
+<%--<%@ include file="import.jsp"%>--%>
  <div class="fn-clear"></div>
 <div class="footer">
 			<div class="wrap">
